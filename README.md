@@ -8,7 +8,9 @@ The best way to keep text and descriptions in git is using the Markdown format. 
 
 ## Web editor vs VSCode
 
-Although you can use the web editor to make changes it's much easier to use a text editor like VSCode. You can download git and VSCode by doing the following:
+Although you can use the web editor to make changes it's much easier to use a text editor like VSCode. You can download git and VSCode by doing following the guides below.
+
+### Mac using Homebrew (preferred)
 
 On a Mac enter the following in Terminal, line by line preferably:
 ```
@@ -16,3 +18,9 @@ On a Mac enter the following in Terminal, line by line preferably:
 brew install --cask visual-studio-code
 brew install git
 ```
+
+### Windows by installing packages
+
+Download and install [Git](https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe)
+
+Then download and install [VSCode](https://code.visualstudio.com/docs/?dv=win#:~:text=direct%20download%20link.)
