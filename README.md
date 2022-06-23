@@ -19,6 +19,19 @@ brew install --cask visual-studio-code
 brew install git
 ```
 
+Now let's authorise git. From the Terminal, run:
+
+```
+brew install gh
+```
+
+and then use the gh tool:
+
+```
+gh auth login
+```
+
+
 ### Windows by installing packages
 
 Download and install [Git](https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe)
