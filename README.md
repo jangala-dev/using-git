@@ -6,7 +6,7 @@ This document outlines our Git versioning and release strategy starting with Dev
 
 ## Overview
 
-[![](https://mermaid.ink/img/pako:eNqdVE1P4zAQ_SsjS1VZQRCFXja3BZYVBz4E7C2XiT1NLBo7csbAqup_x06qbUsTqPAhB8-bN-9NxrMQ0ioSqYBwRqOFNppTWIy5pIrGKYxzbGi8hOVolJnMRFT3LTT_cViX8HSedjfxSFtVmoGxSCETLyfHZ5lYR3OHRpZdYJooetkMypLks_U8FO6YtYrEt_QKf68Hw7_ub-G30mxdb4EKtekRVVqukWWZOMqt5WSm3wb0fYXc1BJi1EAHhNwXeyiqyBU0VGazt8eT3u7-z6O3em4bbc0-XobBu3aa2hpGQ9Y3MZz7hkPid-19qLzl8LTXYSRMcMbkkpYtJFmnyKUwOel1uZvwvcG7au1PpmeQwJ2UGFXjHJRupDWGJK_kr6geLiaDVOe-CHYDT5zWK0L2jj5mnw7o_NTO7kOBgzBB4R2rH3s8GTgIquOvjOoO4cvMdUv6q3w-BOuOr-hkmCVbXV9uzcF0D8YtUT8zIY5EKBIwKmy3RcRlot1qmYgIRTP0c47EywBFz_bxn5EiZefpSPhaIdOlxsJhJdIZzptwS22HbrqN2S7O5Ttg85fL?type=png)](https://mermaid.live/edit#pako:eNqdVE1P4zAQ_SsjS1VZQRCFXja3BZYVBz4E7C2XiT1NLBo7csbAqup_x06qbUsTqPAhB8-bN-9NxrMQ0ioSqYBwRqOFNppTWIy5pIrGKYxzbGi8hOVolJnMRFT3LTT_cViX8HSedjfxSFtVmoGxSCETLyfHZ5lYR3OHRpZdYJooetkMypLks_U8FO6YtYrEt_QKf68Hw7_ub-G30mxdb4EKtekRVVqukWWZOMqt5WSm3wb0fYXc1BJi1EAHhNwXeyiqyBU0VGazt8eT3u7-z6O3em4bbc0-XobBu3aa2hpGQ9Y3MZz7hkPid-19qLzl8LTXYSRMcMbkkpYtJFmnyKUwOel1uZvwvcG7au1PpmeQwJ2UGFXjHJRupDWGJK_kr6geLiaDVOe-CHYDT5zWK0L2jj5mnw7o_NTO7kOBgzBB4R2rH3s8GTgIquOvjOoO4cvMdUv6q3w-BOuOr-hkmCVbXV9uzcF0D8YtUT8zIY5EKBIwKmy3RcRlot1qmYgIRTP0c47EywBFz_bxn5EiZefpSPhaIdOlxsJhJdIZzptwS22HbrqN2S7O5Ttg85fL)
+[![](https://mermaid.ink/img/pako:eNqdVE1P4zAQ_SsjS1VBSxCFXsiNb3FYQLtwy2ViTxOLxo6cMQuq-t_XThD0I4Hu-pBD5s2b98bjWQhpFYlUQDij0UIbzSksxlxSReMUxjk2NF7CcjTKTGYiqvsWmm8c1iU8nqfdn3ikrSrNwFikkImXo8OTTHxGc4dGll1gmih6WQ3KkuSz9TwU7pi1isR39AeebgfDZw93cKU0W9dboEJtekSVlmtkWSaOcms5menXAX3fIVe1hBg10AEh90UmVrtzOEl-XUx2UFmRK2io9Dpjb8c_8ui1nttGW7OLv2HwtsWmtobRkPVNDOe-4ZDYWf53exuV1xwe9zqMhAnOmFzSsoUk6xS5FCZHvS63E_5vGK9b-5PpCSRwLyVG1TgHpRtpjSHJ7_LfqTbve5Xq3BfBbuCJE3xNyN7RZvbxgM4v7Ww_HtgLExTettrf4RnBXlAdrzKq-wHfZn62pL_K10PQc5MdrQwzZavby7V5mO7AvCbuNBPiQATmgFFh8y0iLhPtxstERCiaoZ9zJF4GKHq2v9-MFCk7TwfC1wqZLjUWDiuRznDehL_Udupnt03bpbr8CyjqoIM?type=png)](https://mermaid.live/edit#pako:eNqdVE1P4zAQ_SsjS1VBSxCFXsiNb3FYQLtwy2ViTxOLxo6cMQuq-t_XThD0I4Hu-pBD5s2b98bjWQhpFYlUQDij0UIbzSksxlxSReMUxjk2NF7CcjTKTGYiqvsWmm8c1iU8nqfdn3ikrSrNwFikkImXo8OTTHxGc4dGll1gmih6WQ3KkuSz9TwU7pi1isR39AeebgfDZw93cKU0W9dboEJtekSVlmtkWSaOcms5menXAX3fIVe1hBg10AEh90UmVrtzOEl-XUx2UFmRK2io9Dpjb8c_8ui1nttGW7OLv2HwtsWmtobRkPVNDOe-4ZDYWf53exuV1xwe9zqMhAnOmFzSsoUk6xS5FCZHvS63E_5vGK9b-5PpCSRwLyVG1TgHpRtpjSHJ7_LfqTbve5Xq3BfBbuCJE3xNyN7RZvbxgM4v7Ww_HtgLExTettrf4RnBXlAdrzKq-wHfZn62pL_K10PQc5MdrQwzZavby7V5mO7AvCbuNBPiQATmgFFh8y0iLhPtxstERCiaoZ9zJF4GKHq2v9-MFCk7TwfC1wqZLjUWDiuRznDehL_Udupnt03bpbr8CyjqoIM)
 
 Since Mermaid can't show rebases yet, we shown in the main-after-merge the effects of doing interactive rebase, in which it will look as if v0.4 was branched straight after the last bugfix and also the bugfix for the APN editor (revealed by RC1) could be integrated into the main commit for that feature.
 
@@ -14,7 +14,7 @@ Since Mermaid can't show rebases yet, we shown in the main-after-merge the effec
 
 **Decision:** Before reaching version 1.0, the `main` branch will always represent the latest stable release.
 
-**Rationale:** By keeping the `main` branch stable, anyone cloning or forking the repository can rely on it as a working version of the code. This practice minimises confusion and ensures that contributors and users have access to a functional codebase.
+**Rationale:** By keeping the `main` branch stable, anyone cloning or forking the repository can rely on it as a working version of the code. This practice minimises confusion and ensures that contributors always have access to a functional codebase. It also ensures that every single public release we do is present on the main branch
 
 ### 2. Release Tags
 
@@ -44,27 +44,15 @@ Since Mermaid can't show rebases yet, we shown in the main-after-merge the effec
 
 **Decision:** Before merging a point release branch (e.g., 0.4) into the `main` branch, an interactive rebase will be performed to maintain a clean and linear project history.
 
-**Rationale:** Interactive rebasing helps organise commits and create a clear, informative, and linear project history. This practice enhances code readability and traceability.
+**Rationale:** Interactive rebasing helps organise commits and create a clear, informative, and linear project history. This practice enhances code readability and traceability. Learn more about Git rebase [here](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
-### 7. Commit Messages
+## Example: Managing `Devicecode`
 
-**Decision:** Clear and informative commit messages will be used for all commits.
+To illustrate how this versioning and release strategy will be applied, let's consider how we would manage a project like Devicecode:
 
-**Rationale:** Well-written commit messages provide context and clarity, making it easier for team members and contributors to understand the purpose and significance of each commit. This practice improves collaboration and code review.
+1.  **Stable Main Branch:** The `main` branch of the Devicecode repository will always represent the latest stable release (e.g., 0.3).
 
-### 8. Documentation
-
-**Decision:** A document or README will be included in the repository to explain the versioning and release strategy.
-
-**Rationale:** Providing documentation within the repository helps new contributors and team members understand our Git workflow and strategy. It serves as a reference point for best practices and ensures consistency in project management.
-
-## Example: Managing "Devicecode"
-
-To illustrate how this versioning and release strategy will be applied, let's consider how we would manage a project like "Devicecode":
-
-1.  **Stable Main Branch:** The `main` branch of the "Devicecode" repository will always represent the latest stable release (e.g., 0.3).
-
-2.  **Release Tags:** Releases of "Devicecode" will be tagged with version numbers (e.g., v0.3).
+2.  **Release Tags:** Releases of Devicecode will be tagged with version numbers (e.g., v0.3).
 
 3.  **Development Branches:** For each new point release (e.g., 0.4), a dedicated branch (e.g., `v0.4-dev`) will be created for feature development and bug fixes.
 
