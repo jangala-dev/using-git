@@ -6,47 +6,7 @@ This document outlines our Git versioning and release strategy starting with Dev
 
 ## Overview
 
-```mermaid
-    %%{init: {'theme': 'base'} }%%
-
-    
-    gitGraph TB:
-        commit tag: "v0.3"
-        branch "v0.4-dev"
-        checkout "v0.4-dev"
-        commit id: "New UI"
-        commit id: "APN Editor"
-        checkout main
-        branch "hotpatch-reboot-fix"
-        checkout "hotpatch-reboot-fix"
-        commit id: "fixes reboot bug"
-        checkout main
-        merge "hotpatch-reboot-fix" tag: "v0.3.1"
-        checkout "v0.4-dev"
-        merge "main"
-        checkout "main"
-        branch "hotpatch-explosion-fix"
-        checkout "hotpatch-explosion-fix"
-        commit id: "fixes spontaneous combustion bug"
-        checkout main
-        merge "hotpatch-explosion-fix" tag: "v0.3.2"
-        checkout "v0.4-dev"
-        merge "main"
-        checkout "main"
-        branch "main-after-merge" order: 10
-        checkout "main-after-merge"
-        checkout "v0.4-dev"
-        commit id: "Fixes 143 - Occasional disconnect" tag:"v0.4-RC1"
-        commit id: "Bugfix - APN Feature" tag:"v0.4-RC2"
-        checkout "main-after-merge"
-        commit id: "New UI (rebased)"
-        commit id: "APN Editor (RC1 bugfix + rebased)"
-        commit id: "Fixes 143 (rebased)"
-        checkout main
-        merge "v0.4-dev" id: "customID" tag: "v0.4"
-        checkout main
-        commit id: "hotpatch......"
-```
+[![](https://mermaid.ink/img/pako:eNqdVE1P4zAQ_SsjS1VZQRCFXja3BZYVBz4E7C2XiT1NLBo7csbAqup_x06qbUsTqPAhB8-bN-9NxrMQ0ioSqYBwRqOFNppTWIy5pIrGKYxzbGi8hOVolJnMRFT3LTT_cViX8HSedjfxSFtVmoGxSCETLyfHZ5lYR3OHRpZdYJooetkMypLks_U8FO6YtYrEt_QKf68Hw7_ub-G30mxdb4EKtekRVVqukWWZOMqt5WSm3wb0fYXc1BJi1EAHhNwXeyiqyBU0VGazt8eT3u7-z6O3em4bbc0-XobBu3aa2hpGQ9Y3MZz7hkPid-19qLzl8LTXYSRMcMbkkpYtJFmnyKUwOel1uZvwvcG7au1PpmeQwJ2UGFXjHJRupDWGJK_kr6geLiaDVOe-CHYDT5zWK0L2jj5mnw7o_NTO7kOBgzBB4R2rH3s8GTgIquOvjOoO4cvMdUv6q3w-BOuOr-hkmCVbXV9uzcF0D8YtUT8zIY5EKBIwKmy3RcRlot1qmYgIRTP0c47EywBFz_bxn5EiZefpSPhaIdOlxsJhJdIZzptwS22HbrqN2S7O5Ttg85fL?type=png)](https://mermaid.live/edit#pako:eNqdVE1P4zAQ_SsjS1VZQRCFXja3BZYVBz4E7C2XiT1NLBo7csbAqup_x06qbUsTqPAhB8-bN-9NxrMQ0ioSqYBwRqOFNppTWIy5pIrGKYxzbGi8hOVolJnMRFT3LTT_cViX8HSedjfxSFtVmoGxSCETLyfHZ5lYR3OHRpZdYJooetkMypLks_U8FO6YtYrEt_QKf68Hw7_ub-G30mxdb4EKtekRVVqukWWZOMqt5WSm3wb0fYXc1BJi1EAHhNwXeyiqyBU0VGazt8eT3u7-z6O3em4bbc0-XobBu3aa2hpGQ9Y3MZz7hkPid-19qLzl8LTXYSRMcMbkkpYtJFmnyKUwOel1uZvwvcG7au1PpmeQwJ2UGFXjHJRupDWGJK_kr6geLiaDVOe-CHYDT5zWK0L2jj5mnw7o_NTO7kOBgzBB4R2rH3s8GTgIquOvjOoO4cvMdUv6q3w-BOuOr-hkmCVbXV9uzcF0D8YtUT8zIY5EKBIwKmy3RcRlot1qmYgIRTP0c47EywBFz_bxn5EiZefpSPhaIdOlxsJhJdIZzptwS22HbrqN2S7O5Ttg85fL)
 
 Since Mermaid can't show rebases yet, we shown in the main-after-merge the effects of doing interactive rebase, in which it will look as if v0.4 was branched straight after the last bugfix and also the bugfix for the APN editor (revealed by RC1) could be integrated into the main commit for that feature.
 
